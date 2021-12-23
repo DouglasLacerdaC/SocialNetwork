@@ -1,0 +1,19 @@
+<div class="page-login">
+
+    <div class="container-form">
+        <img src="../../../assets/images/login.png" alt="">
+        <div class="form">
+            <p [ngStyle]="{ display: display() }" class="invalid" >
+                Nenhum usuario encontrado
+                <img src="../../../assets/images/not.gif" alt="">
+            </p>
+            <h2>Login</h2>
+            <p>Insira o seu nome de usuario do github</p>
+            <div class="input">
+                <input [(ngModel)]="userName" type="text" placeholder="Nome do usuario">
+            </div>
+            <button (click)="login()" >Entrar</button>
+        </div>
+    </div>
+
+</div>

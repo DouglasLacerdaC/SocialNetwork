@@ -1,0 +1,109 @@
+@import '../../../assets/scss/main.scss';
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $first-color;
+        color: $white-color;
+        border: none;
+        cursor: pointer;
+        transition: 200ms;
+
+        &:hover {
+            background-color: rgb(123, 76, 184);
+        }
+    }
+
+    .active-friends {
+        position: relative;
+        max-width: 600px;
+        overflow: hidden;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -3px;
+            width: 30px;
+            height: 100%;
+            background-image: linear-gradient(to right, #1c1c1c, transparent);
+            z-index: 1000;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background-image: linear-gradient(to left, #1c1c1c, transparent);
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 500ms cubic-bezier(0, 0, 0.22, 1.2);
+
+            .user {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 10px;
+                    right: 5px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: rgb(0, 145, 12);
+                }
+
+
+                img {
+                    width: 55px;
+                    border-radius: 50%;
+                }
+                
+            }
+
+            .visible {
+                white-space: nowrap;
+                color: #ffffff;
+                font-size: 12px;
+                cursor: pointer;
+                margin: 0 0 0 20px
+            } 
+
+        }
+
+        
+    }
+    
+    @media (max-width: 1335px) {
+        .active-friends {
+            max-width: 400px;
+        }
+
+    }
+
+    @media (max-width: 640px) {
+        .active-friends {
+            max-width: 250px;
+        }
+
+    }
+
+}

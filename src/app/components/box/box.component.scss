@@ -1,0 +1,39 @@
+@import '../../../assets/scss/main.scss';
+
+.flex {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    max-width: 224px;
+    color: $white-color;
+
+    .item {
+        opacity: 0.7;
+        transition: 200ms;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        img {
+            width: 70px;
+            border-radius: 10%;
+            object-fit: cover;
+            transition: 200ms;
+        }
+    
+        p {
+            font-size: 10px;
+            text-align: center;
+            display: block;
+            width: 70px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+    }
+    
+}

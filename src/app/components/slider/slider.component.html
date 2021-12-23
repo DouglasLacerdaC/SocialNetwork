@@ -1,0 +1,20 @@
+<div class="row">
+
+    <button (click)="dragRight()" class="drag-right">
+        <i class="fas fa-angle-left"></i>
+    </button>
+
+    <div class="active-friends">
+        <div class="slider" [ngStyle]="{ 'transform': slider() }">
+            <div *ngFor="let friends of friendsActive" class="user">
+                <img src="{{ friends.image }}" alt="">
+            </div>
+            <span class="visible">Ver mais</span>
+        </div>
+    </div>
+    
+    <button (click)="dragLeft()" >
+        <i class="fas fa-angle-right"></i>
+    </button>
+
+</div>

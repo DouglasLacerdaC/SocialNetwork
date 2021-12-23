@@ -1,0 +1,113 @@
+@import '../../../assets/scss/main.scss';
+
+aside {
+    min-height: 100vh;
+    max-height: 100vh;
+    position: sticky;
+    overflow-y: auto;
+    display: inline-block;
+    padding: 20px 0;
+    background-color: $second-color;
+    box-shadow: 5px 0px 28px rgba(0, 0, 0, 0.11);
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 50px;
+    }
+    
+    &:hover::-webkit-scrollbar-thumb {
+        background-image: linear-gradient(to top, #00000000, $third-color);
+    }
+
+    .information-user {
+        padding: 0 50px;
+        text-align: center;
+
+        .image-user {
+            width: 125px;
+            border-radius: 50%;
+        }
+
+        .name-user {
+            color: $white-color;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+    }
+
+    .nav {
+        margin: 30px 10px 0 0;
+        flex-direction: column;
+
+        .nav-link {
+            padding: 8px 20px;
+            margin: 10px 0 0 0;
+            display: flex;
+            align-items: center;
+            color: #ffffffbb;
+            transition: 200ms;
+            font-size: 12px;
+
+            &:hover {
+                color: $white-color;
+            }
+
+            &.active {
+                background-color: $first-color;
+                color: $white-color;
+                border-radius: 0 50px 50px 0;
+                font-weight: 100;
+                width: 100%;
+                box-shadow: 1px 4px 9px rgba(0, 0, 0, 0.4);
+            }
+
+            svg {
+                width: 20%;
+                font-size: 18px;
+                margin: 0 20px 0 0;
+            }
+
+            span {
+                display: inline-block;
+                width: 70%;
+                font-size: 13px;
+                letter-spacing: 0.05px;
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            
+        }
+
+        .games {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.11);
+            padding: 20px 0;
+
+            .title {
+                font-size: 14px;
+                text-align: center;
+                color: $white-color;
+            }
+                
+            .nav-link {
+                padding: 0 15px;
+
+                img {
+                    width: 45px;
+                    object-fit: cover;
+                }
+
+            }
+
+        }
+
+    }
+
+}

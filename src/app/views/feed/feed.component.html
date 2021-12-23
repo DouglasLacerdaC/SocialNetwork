@@ -1,0 +1,134 @@
+<div class="grid">
+
+    <div class="nav">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="content">
+
+        <div class="active">
+            <p>Usuarios ativos</p>
+            <app-slider></app-slider>
+        </div>
+        
+        <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+            <div class="thinking">
+                <p>O que você está pensando, {{ nameUser }}? </p>
+                <textarea formControlName="comment" class="area-thinking" placeholder="Digite..." ></textarea>
+                <div class="bottom-thinking">
+                    <div class="reactions">
+                        <img src="../../../assets/images/angry.gif">
+                        <img src="../../../assets/images/refusing.gif">
+                    </div>
+                    <button type="submit" (click)="changeSuccessMessage()" class="public-post">Publicar</button>
+                </div>
+            </div>
+        </form>
+        
+        <ngb-alert #selfClosingAlert *ngIf="successMessage" (closed)="successMessage = ''">
+            <div class="custom-alert">
+                <img src="{{ dataUser.avatar_url }}" alt="">
+                <span>{{ dataUser.login }}</span>
+            </div>
+                <p><ngb-progressbar type="secondary" [value]="valueProgress"></ngb-progressbar></p>
+        </ngb-alert>
+        
+        <div class="posts">
+            <div class="post" *ngFor="let post of posts">
+                <div class="post-header">
+                    <div class="user">
+                        <img src="{{ post.profile.image }}">
+                        <span>{{ post.profile.name }}</span>
+                    </div>
+                    <div class="time">
+                        <span>{{ post.created_at }}</span>
+                    </div>
+                </div>
+
+                <div class="post-body">
+                    <div class="comment">
+                        <p>{{ post.comment }}</p>
+                    </div>
+                    <div  *ngIf="post.images.image_one != ''" class="img">
+                        <img class="image-1"  src="{{ post.images.image_one }}" alt="">
+                        <img class="image-2" *ngIf="post.images.image_two != ''"  src="{{ post.images.image_two }}" alt="">
+                        <img class="image-3" *ngIf="post.images.image_three != ''" src="{{ post.images.image_three }}" alt="">
+                    </div>
+                </div>
+
+                <div class="post-footer">
+                    <div class="item container-reactions">
+                        <span>
+                            <i class="far fa-heart"></i>
+                        </span>
+                        <span>Reagir</span>
+                        <div class="reactions">
+                            <img src="../../../assets/images/heart.gif">
+                            <img src="../../../assets/images/refusing.gif">
+                            <img src="../../../assets/images/angry.gif">
+                            <img src="../../../assets/images/scared.gif">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span>
+                            <i class="far fa-comments"></i>
+                        </span>
+                        <span>Comentar</span>
+                    </div>
+                    <div class="item">
+                        <span>
+                            <i class="fas fa-code-branch"></i>
+                        </span>
+                        <span>Compartilhar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-posts" [ngStyle]="{ opacity: opacitySpinner == false ? 0 : 1 }">
+            <div class="la-ball-atom la-dark la-2x">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="followers">
+
+        <p class="title">Ações de usuarios</p>
+        
+        <ul class="actions">
+            <li>
+                <span class="name">Doug</span>
+                <p>Criou um novo repositório de teste para typescript</p>
+                <span class="date">2021-10-12</span>
+            </li>
+            <li>
+                <span class="name">Doug</span>
+                <p>Criou um novo repositório de teste para typescript</p>
+                <span class="date">2021-10-12</span>
+            </li>
+        </ul>
+
+        <p class="title" >Seguindo(+{{ following.length }})</p>
+        <app-box [follow]="following"></app-box>
+
+        <div class="row"></div>
+
+        <p class="title" >Seguidores(+{{ follower.length }})</p>
+        <app-box [follow]="follower"></app-box>
+
+    </div>
+    
+</div>
+
+<div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+></div>

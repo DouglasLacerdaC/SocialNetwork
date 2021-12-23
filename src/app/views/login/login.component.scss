@@ -1,0 +1,88 @@
+@import '../../../assets/scss/main.scss';
+
+.page-login {
+    display: flex;
+    min-height: 100vh;
+
+    .container-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-grow: 1;
+        background-color: $second-color;
+        color: $white-color;
+
+        img {
+            width: 350px;
+        }
+
+        .form {
+            text-align: center;
+            padding: 20px;
+
+            .invalid {
+                background-color: rgb(255, 51, 51);
+                border-radius: 5px;
+                padding: 10px 20px;
+                margin: 0 0 30px 0;
+                color: $white-color;
+                display: flex;
+                align-items: center;
+                transition: 200ms;
+
+                img {
+                    width: 50px;
+                }
+            }
+
+            p {
+                color: #ffffff90;
+                font-size: 14px;
+                margin: 5px 0 0;
+            }
+
+            input {
+                background-color: rgb(255 255 255 / 7%);
+                color: $white-color;
+                width: 100%;
+                padding: 5px 20px;
+                border: none;
+                border-bottom: 1px solid $first-color;
+                border-radius: 5px 5px 0 0;
+                outline: none;
+                margin: 30px 0;
+            }
+
+            button {
+                background-color: $first-color;
+                width: 80%;
+                padding: 5px 0;
+                border-radius: 50px;
+                border: none;
+                color: $white-color;
+                cursor: pointer;
+                transition: 200ms;
+
+                &:hover {
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+    }
+
+    .content {
+        background-color: $third-color;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 400px;
+        }
+
+    }
+
+}

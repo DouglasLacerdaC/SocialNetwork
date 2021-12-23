@@ -1,0 +1,6 @@
+<div class="flex">
+    <div *ngFor="let item of follow.slice(0, 6)" (click)="profile(item.login)" class="item">
+        <img src="{{ item.avatar_url }}" alt="">
+        <p>{{ item.login }}</p>
+    </div>
+</div>

@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import './assets/scss/main.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: #1c1c1c !important;
+    
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $third-color;
+        border-radius: 50px;
+    }
+
+}
+
+img,
+span {
+    user-select: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

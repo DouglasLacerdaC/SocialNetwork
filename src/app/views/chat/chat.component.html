@@ -1,0 +1,32 @@
+<div class="grid">
+    <div class="nav">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="friends">
+        <div class="new-chat">
+            <button>
+                <span>nova conversa</span>
+                <i class="fas fa-comment-medical"></i>
+            </button>
+        </div>
+        <div class="active-chats">
+            <div *ngFor="let chat of friendsChat" class="chat">
+                <div class="image">
+                    <img src="{{ chat.avatar_url }}" alt="">
+                    <div class="active" [ngStyle]="{'background-color':  '#00ef00' }"></div>
+                </div>
+                <div class="info">
+                    <span>{{ chat.login }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-initial">
+        <div class="image">
+            <img src="../../../assets/images/chat.svg" width="350">
+        </div>
+        <div class="content">
+            <p class="mt-4">Inicie uma conversa agora com amigos e descubra a melhor rede para se conversar</p>
+        </div>
+    </div>
+</div>

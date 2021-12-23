@@ -1,0 +1,451 @@
+@import '../../../assets/scss/global.scss';
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+.user-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    top: -200px;
+    animation: transition 2.5s;
+    animation-fill-mode: forwards;
+    
+    .banner {
+        background-image: url('../../../assets/images/banner.gif');
+        background-color: #181818;
+        border-radius: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        
+        .image-user {
+            position: absolute;
+            top: 175px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $white-color;
+            z-index: 1000;
+
+            img {
+                width: 175px;
+                border: 5px solid $first-color;
+                border-radius: 50%;
+                margin-bottom: 7px;
+
+            }
+
+            span {
+
+                button {
+                    color: #ffffff8c;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    transition: 200ms;
+
+                    &:hover {
+                        color: $white-color;
+                    }
+
+                    svg {
+                        margin: 0 0 0 20px;
+                        transform: translateY(0px);
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    svg {
+        z-index: 1;
+        transform: translateY(-20px);
+    }
+
+}
+
+.praise {
+    max-width: 1000px;
+    margin: 20px auto;
+    color: $white-color;
+    padding: 20px;
+    background-color: #ffffff08;
+    border-radius: 5px;
+
+    p {
+        font-size: 14px;
+    }
+
+    .container {
+
+        span {
+            display: inline-block;
+            padding: 7px 20px;
+            background-color: $second-color;
+            border-radius: 50px;
+            margin: 5px 10px;   
+            font-size: 12px;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+                margin: 0 10px 0 0;
+            }
+
+        }
+
+    }
+            
+}
+
+.posts-user {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid; 
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px;
+    color: #ffffff;
+
+    .informations {
+
+        .container-repository {
+            position: sticky;
+            top: 20px;
+
+            .repositories {
+                background-color: #ffffff08;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin: 0 0 10px 0;
+                max-width: 264px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                }
+
+                img {
+                    width: 50px;
+                    margin: 0 10px 0 0;
+                }
+    
+                a {
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: $white-color;
+    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+    
+                }
+    
+                p {
+                    font-size: 13px;
+                    color: #ffffff96;
+                }
+    
+                span {
+                    font-size: 12px;
+    
+                    svg {
+                        margin: 0 5px 0 0;
+                        font-size: 14px;
+                    }
+    
+                }
+                
+                .limit {
+                    display: block;
+                    width: 224px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            
+            }
+
+        }
+        
+    }
+
+    .posts {
+
+        .post {
+            padding: 10px;
+            background-color: #ffffff08;
+            border-radius: 5px;
+            margin: 0 0 20px 0;
+
+            .post-header {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px;
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    img {
+                        width: 30px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+
+                    span {
+                        margin: 0 0 0 10px;
+                        font-size: 12px;
+                    }
+
+                }
+
+                .time {
+                    font-size: 12px;
+                    color: #ffffff96;
+                    cursor: default;
+                }
+
+            }
+
+            .post-body {
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.048);
+                border-top: 1px solid rgba(255, 255, 255, 0.048);
+                padding: 10px;
+
+                .comment {
+                    font-size: 14px;
+                    margin: 0 0 10px 0;
+
+                }
+
+                .img {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-column-gap: 5px;
+                    grid-row-gap: 5px;
+
+                    .image-1 { 
+                        grid-area: 1 / 1 / 3 / 2;
+                        height: 100%;
+                        opacity: 0.9;
+                    }
+
+                    .image-2 { 
+                        grid-area: 1 / 2 / 2 / 3;
+                        opacity: 0.7;
+                    }
+
+                    .image-3 { 
+                        grid-area: 2 / 2 / 3 / 3;
+                        opacity: 0.7;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+
+                }
+
+            }
+
+            .post-footer {
+                display: flex;
+                justify-content: center;
+
+                .item {
+                    padding: 20px 50px 10px 50px;
+                    cursor: pointer;
+                    transition: 200ms;
+
+                    span {
+                        font-size: 12px;
+
+                        svg {
+                            margin: 0 10px 0 0;
+                            font-size: 16px;
+                        }
+                    }
+
+                    &:hover {
+                        color: #ac60ff;
+
+                    }
+
+                    &.container-reactions {
+                        position: relative;
+
+                        &:hover .reactions {
+                            visibility: visible;
+                            opacity: 1;
+                            top: -40px;
+                        }
+
+                        .reactions {
+                            background-color: $first-color;
+                            border-radius: 50px;
+                            padding: 5px 10px;
+                            top: -20px;
+                            left: 0px;
+                            position: absolute;
+                            display: flex;
+                            visibility: hidden;
+                            opacity: 0;
+                            transition: 200ms;
+
+                            img {
+                                width: 40px;
+                                margin: 0 2px;
+                                transition: 200ms;
+
+                                &:hover {
+                                    transform: translateY(-5px);
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                @media (max-width: 1335px) {
+                    .item {
+                        padding: 20px 30px 10px 30px;
+                    }
+            
+                }
+
+            }
+
+        }
+
+    }
+
+    .create-account {
+        width: 100%;
+        text-align: center;
+        background-color: #ffffff08;
+        padding: 20px;
+        border-radius: 5px;   
+        margin: 0 0 20px 0;
+
+        img {
+            width: 100px;
+        }
+
+    }
+    
+}
+
+.modal-header {
+    font-size: 15px;
+    background-color: $second-color;
+    color: #ffffffb9;
+    justify-content: start;
+    align-items: center;
+    border-radius: 0;
+
+    svg {
+        margin: 0 10px 0 0;
+    }
+
+}
+
+.modal-body {
+    background-color: $second-color;
+    color: $white-color;
+
+    .information-user {
+        display: flex;
+        align-items: center;
+        
+        .image {
+
+            img {
+                width: 75px;
+                border: 2px solid $first-color;
+                border-radius: 50%;
+            }
+    
+        }
+        
+        .name {
+            margin: 0 0 0 20px;
+            color: #ffffff7a;
+            font-size: 14px;
+
+            .repository {
+                margin: 7px 0 0 0;
+                font-size: 12px;
+            }
+
+        }
+
+    }
+
+    .bio {
+        margin: 20px 0 0;
+
+        p {
+            font-size: 15px;
+        }
+
+        .area {
+            height: 75px;
+            padding: 10px;
+            resize: none;
+            width: 100%;
+            border: 1px solid #ffffff0c !important;
+            border-radius: 5px;
+            background-color: transparent;
+            outline: none;
+            color: #ffffffb9;
+            caret-color: yellow;
+        }
+
+        .save {
+            margin: 20px 0 0;
+            padding: 5px 20px;
+            border-radius: 50px;
+            border: 1px solid $first-color;
+            color: $white-color;
+            font-size: 12px;
+            background-color: rgba(255, 0, 0, 0);
+            transition: 200ms;
+
+            &:hover {
+                background-color: $first-color;
+            }
+            
+        }
+
+    }
+
+}
+
+@keyframes transition {
+    100% {
+        top: 0;
+    }
+}

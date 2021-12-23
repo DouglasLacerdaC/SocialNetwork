@@ -1,0 +1,57 @@
+<aside>
+
+    <div class="information-user">
+        <img class="image-user" src="{{ user.avatar_url }}">
+        <p class="name-user" (click)="profile(user.login)" >{{ user.login }}</p>
+    </div>
+
+    <nav class="nav">
+        <ul>
+
+            <li>
+                <a [routerLink]="['/feed']" [queryParams]="{user: user.login}" routerLinkActive="active" class="nav-link" >
+                    <i class="fas fa-home"></i>
+                    <span>Feed</span>
+                </a>
+                <a [routerLink]="['/chat']" [queryParams]="{user: user.login}" routerLinkActive="active" class="nav-link" >
+                    <i class="far fa-comments"></i>
+                    <span>Chat</span>
+                </a>
+                <a routerLink="s" routerLinkActive="active" class="nav-link" >
+                    <i class="fas fa-users"></i>
+                    <span>Seguidores</span>
+                </a>
+                <a (click)="logout()" class="nav-link" >
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="games">
+            <p class="title" >Joguinhos</p>
+
+            <ul>
+
+                <li>
+                    <a class="nav-link" >
+                        <img src="../../../assets/images/mine.png" alt="">
+                        <span>Minecraft</span>
+                    </a>
+                    <a class="nav-link" >
+                        <img src="../../../assets/images/lol.png" alt="">
+                        <span>League of Legends</span>
+                    </a>
+                    <a class="nav-link" >
+                        <img src="../../../assets/images/mario.png" alt="">
+                        <span>Super Mario</span>
+                    </a>
+                </li>
+    
+            </ul>
+        </div>
+
+    </nav>
+    
+</aside>
